@@ -149,15 +149,6 @@ Plugin 'Valloric/YouCompleteMe'
 " if under eclim, lets YouCompleteMe and eclim play nice
 let g:EclimCompletionMethod = 'omnifunc'
 
-" Vdebug is a debbuger fo the DGP debugging protocol.
-" Using mostly for xdebug and PHP, but works for multiple languages.
-Plugin 'joonty/vdebug'
-
-" floobits -- code sharing?
-" Plugin 'Floobits/floobits-vim'
-" floobits likes YouCompleteMe to reduce updatetime so that code is more in sync
-" let g:ycm_allow_changing_updatetime=0
-
 "Folds {{{
 set foldmethod=marker
 set foldlevel=99 "folds open by default

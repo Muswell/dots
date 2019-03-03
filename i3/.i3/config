@@ -33,7 +33,7 @@
 #########################################################################
 
 exec --no-startup-id compton &
-exec --no-startup-id feh --bg-fill /home/sscanlon/Pictures/Wallpapers/space-port.jpg
+exec --no-startup-id feh --bg-fill /home/sscanlon/Pictures/wallpaper.jpg
 # Enable network manager on startup
 exec --no-startup-id nm-applet
 
