@@ -17,7 +17,7 @@
 ;==========================================================
 
 include-file = ~/.config/polybar/global.conf
-include-file = ~/.config/polybar/bars/top.conf
+include-file = ~/.config/polybar/bars/bottom.conf
 
 [module/i3]
 type = internal/i3
