@@ -1,0 +1,334 @@
+#########################################################################
+#   i3 Window Manager Configuration
+#   
+#   @author: Shane Scanlon
+#   @url: https://github.com/muswell/dotfiles/.i3/config
+#
+#   Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#########################################################################
+#   Table of Contents
+#
+#   1: Startup Script
+#
+#   2: Global System Settings
+#   -- A: System Commands
+#   -- B: Application Launchers
+#   -- C: Movement and Layout
+#   -- D: Switching Modes
+#
+#   3: dMenu
+#
+#   4: Resize Mode
+#
+#   5: Float 
+#
+#   6: Customized Layout
+#   -- A:Startup Windows
+#   -- B:Info Bar
+#   -- C: Styles
+#   -- D: Gaps
+#
+#########################################################################
+#   1. Startup Script
+#########################################################################
+
+exec --no-startup-id compton &
+exec --no-startup-id feh --bg-fill /home/sscanlon/Pictures/Wallpapers/space-port.jpg
+# Enable network manager on startup
+exec --no-startup-id nm-applet
+
+# Enable various gnome setting applets in window bar.
+#exec --no-startup-id gnome-settings-daemon
+
+# enable keyring
+exec --no-startup-id ssh-add
+exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal;'
+exec ~/.i3/startup.sh
+
+
+#########################################################################
+#   2. Global System Settings -- A: System Commands
+#########################################################################
+
+set $mod Mod4
+
+# reload the configuration file
+bindsym $mod+z reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+R restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+E exit
+# lock your screen
+bindsym $mod+Escape exec i3lock -i ~/Pictures/Wallpapers/river.png
+
+set $term_background  #3C4D81
+set $term_foreground #c1c1c1
+set $base00           #FFE8C9
+set $base01           #5f8787
+set $base02           #D13270
+set $base03           #e78a53
+set $base04           #888888
+set $base05           #999999
+set $base06           #aaaaaa
+set $base07           #c1c1c1
+set $base08           #333333
+set $base09           #5f8787
+set $base0A           #D13270
+set $base0B           #e78a53
+set $base0C           #888888
+set $base0D           #999999
+set $base0E           #aaaaaa
+set $base0F           #c1c1c1
+
+set $gray #741A3D
+set $almostwhite #888888
+
+#########################################################################
+#   2. Global System Settings -- B: Application Launchers
+#########################################################################
+
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# start dmenu (a program launcher)
+bindsym $mod+space exec dmenu_run -nb '$base00' -nf '$base02' -sb '$base02' -sf '$base00' -i -fn "-*-Source Code Pro 10 pitch-*-*-*-*-16-*-*-*-*-*-*-*"
+
+# start firefox
+bindsym $mod+c exec firefox
+
+# start emacs
+bindsym $mod+m exec emacs
+#########################################################################
+#   2. Global System Settings -- C: Movement and Layout
+#########################################################################
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+H move left
+bindsym $mod+Shift+J move down
+bindsym $mod+Shift+K move up
+bindsym $mod+Shift+L move right
+
+# "alt tabbing" except not really ($mod tabbing)
+bindsym $mod+Tab workspace back_and_forth
+
+# kill focused window
+bindsym $mod+Shift+Q kill
+
+# split in horizontal orientation
+bindsym $mod+b split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout default
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindcode $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+exclam move workspace 1
+bindsym $mod+Shift+at move workspace 2
+bindsym $mod+Shift+numbersign move workspace 3
+bindsym $mod+Shift+dollar move workspace 4
+bindsym $mod+Shift+percent move workspace 5
+bindsym $mod+Shift+asciicircum move workspace 6
+bindsym $mod+Shift+ampersand move workspace 7
+bindsym $mod+Shift+asterisk move workspace 8
+bindsym $mod+Shift+parenleft move workspace 9
+bindsym $mod+Shift+parenright move workspace 10
+
+#########################################################################
+#   4. Resize Mode
+#########################################################################
+
+bindsym $mod+r mode "resize"
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # They resize the border in the direction you pressed, e.g.
+        # when pressing left, the window is resized so that it has
+        # more space on its left
+
+bindsym Shift+H resize shrink left 10 px or 10 ppt
+bindsym h resize grow left 10 px or 10 ppt
+
+bindsym Shift+J resize shrink down 10 px or 10 ppt
+bindsym j resize grow down 10 px or 10 ppt
+
+bindsym Shift+K resize shrink up 10 px or 10 ppt
+bindsym k resize grow up 10 px or 10 ppt
+
+bindsym Shift+L resize shrink right 10 px or 10 ppt
+bindsym l resize grow right 10 px or 10 ppt
+
+# same bindings, but for the arrow keys
+#bindsym Left resize shrink left 10 px or 10 ppt
+#bindsym Shift+Left resize grow   left 10 px or 10 ppt
+
+#bindsym Down resize shrink down 10 px or 10 ppt
+#bindsym Shift+Down resize grow   down 10 px or 10 ppt
+
+#bindsym Up resize shrink up 10 px or 10 ppt
+#bindsym Shift+Up resize grow   up 10 px or 10 ppt
+
+#bindsym Right resize shrink right 10 px or 10 ppt
+#bindsym Shift+Right resize grow   right 10 px or 10 ppt
+
+# back to normal: Enter or Escape
+bindsym Return mode "default"
+bindsym Escape mode "default"
+}
+
+#########################################################################
+#   5. Floating Windows
+#########################################################################
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# toggle tiling / floating
+bindsym $mod+Up floating toggle
+
+# change focus between tiling / floating windows
+#bindsym $mod+Down focus mode_toggle
+
+
+#########################################################################
+#   6. Customized Layout -- A: Startup Windows
+#########################################################################
+
+workspace 1 output LVDS1
+workspace 2 output HDMI1
+
+
+workspace_layout tabbed
+new_window pixel 2
+#########################################################################
+#   6. Customized Layout -- B: Info Bar
+#########################################################################
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+#bar {
+#        status_command i3status
+#        font pango:Droid Serif 10
+#        colors {
+#            background #FD5A1E
+#            statusline #000000
+#            separator #000000
+#            focused_workspace #FFFFFF #FFFFFF #FD5A1E
+#            inactive_workspace #FFFFFF #000000 #FD5A1E 
+#            active_workspace #FFFFFF #000000 #FD5A1E 
+#        }
+#        tray_output LVDS1
+#}
+
+
+#########################################################################
+#   6. Customized Layout -- C: Styles
+#########################################################################
+font pango: DejaVu Sans Mono 10
+
+
+# Basic color configuration using the Base16 variables for windows and borders.
+# Property Name         Border  BG      Text    Indicator Child Border
+client.focused          $base02 $base02 $base00 $base02 $base02
+client.focused_inactive $base02 $base00 $base0D $gray $gray
+client.unfocused        #444444 #333333   #666666 $base02 $gray
+client.urgent           $base02 $base00 $base0F $base02 $gray
+client.placeholder      $base02 $base00 $base0F $base02 $gray
+client.background $base0E
+
+#########################################################################
+#   6. Customized Layout -- D: Gaps
+#########################################################################
+
+# Disable window titlebars entirely
+#for_window [class="^.*"] border pixel 1 
+for_window [class=".*"] title_format "<b>%class</b>"
+
+# Set inner/outer gaps
+gaps inner 5
+gaps outer 2
+
+# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
+# gaps inner|outer current|all set|plus|minus <px>
+
+# gaps inner all set 10
+# gaps outer all plus 5
+
+# Smart gaps (gaps used if only more than one container on the workspace)
+ smart_gaps on
+
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+smart_borders on
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+	bindsym o      mode "$mode_gaps_outer"
+		bindsym i      mode "$mode_gaps_inner"
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+	bindsym plus  gaps inner current plus 5
+		bindsym minus gaps inner current minus 5
+		bindsym 0     gaps inner current set 0
+
+		bindsym Shift+plus  gaps inner all plus 5
+		bindsym Shift+minus gaps inner all minus 5
+		bindsym Shift+0     gaps inner all set 0
+
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+	bindsym plus  gaps outer current plus 5
+		bindsym minus gaps outer current minus 5
+		bindsym 0     gaps outer current set 0
+
+		bindsym Shift+plus  gaps outer all plus 5
+		bindsym Shift+minus gaps outer all minus 5
+		bindsym Shift+0     gaps outer all set 0
+
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
+bindsym $mod+Shift+d gaps inner current set 0; gaps outer current set 0

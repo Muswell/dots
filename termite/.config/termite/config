@@ -1,0 +1,111 @@
+[options]
+#allow_bold = true
+#audible_bell = false
+#bold_is_bright = true
+#clickable_url = true
+#dynamic_title = true
+font = Source Code Pro 14
+#fullscreen = true
+#icon_name = terminal
+#mouse_autohide = false
+#scroll_on_output = false
+#scroll_on_keystroke = true
+# Length of the scrollback buffer, 0 disabled the scrollback buffer
+# and setting it to a negative value means "infinite scrollback"
+scrollback_lines = 10000
+#search_wrap = true
+#urgent_on_bell = true
+#hyperlinks = false
+
+# $BROWSER is used by default if set, with xdg-open as a fallback
+#browser = xdg-open
+
+# "system", "on" or "off"
+#cursor_blink = system
+
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+# Hide links that are no longer valid in url select overlay mode
+#filter_unmatched_urls = true
+
+# Emit escape sequences for extra modified keys
+#modify_other_keys = false
+
+# set size hints for the window
+#size_hints = false
+
+# "off", "left" or "right"
+#scrollbar = off
+
+[colors]
+# Base16 Black Metal (Bathory)
+# Author: metalelf0 (https://github.com/metalelf0)
+
+#foreground          = #c1c1c1
+#foreground_bold     = #999999
+#cursor              = #999999
+#cursor_foreground   = #000000
+#background          = rgba(60, 77, 129, .85)
+
+#Cream
+foreground          = #FFE8C9
+#Yellow
+foreground_bold     = #FABD33
+#Purple
+cursor              = #D13270
+cursor_foreground   = #000000
+background          = rgba(60, 77, 129, .95)
+
+# 16 color space
+
+# Black, Gray, Silver, White
+color0  = #3C4D81
+color8  = #8898C8
+color7  = #FFE8C9
+color15 = #FFFFFF
+
+# Red
+color1  = #DF729C
+color9  = #DF729C
+
+# Green
+color2  = #FABD33
+color10 = #FABD33
+
+# Yellow
+color3  = #D13270
+color11 = #D13270
+
+# Blue
+color4  = #FFFFFF
+color12 = #FFFFFF
+
+# Purple
+color5  = #999999
+color13 = #999999
+
+# Teal
+color6  = #8898C8
+color14 = #8898C8
+
+# Extra colors
+color16 = #aaaaaa
+color17 = #444444
+color18 = #121212
+color19 = #222222
+color20 = #999999
+color21 = #999999
+
+[hints]
+#font = Monospace 12
+#foreground = #dcdccc
+#background = #3f3f3f
+#active_foreground = #e68080
+#active_background = #3f3f3f
+#padding = 2
+#border = #3f3f3f
+#border_width = 0.5
+#roundness = 2.0
+
+# vim: ft=dosini cms=#%s
