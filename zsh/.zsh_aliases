@@ -1,0 +1,10 @@
+alias ls='ls -F --color=auto' 
+alias ll='ls -alrth --color=auto'
+alias grep='grep --color=auto' 
+alias vi='vim'
+alias sudo='command sudo '
+alias rr='ranger'
+alias libreoffice="libreoffice --norestore &"
+
+# store aliases elsewhere
+[ -f ~/.zsh_git_aliases ] && source ~/.zsh_git_aliases
