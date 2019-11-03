@@ -85,6 +85,8 @@ bindkey -e '\e[3~' delete-char
 [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
 #store path
 [ -f ~/.zsh_path ] && source ~/.zsh_path
+#store machine specific path
+[ -f ~/.zsh_local_path ] && source ~/.zsh_local_path
 #store ssh
 [ -f ~/.zsh_ssh_agent ] && source ~/.zsh_ssh_agent
 
@@ -122,3 +124,8 @@ bindkey -M vicmd 'j' history-substring-search-down
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/sscanlon/.sdkman"
 [[ -s "/home/sscanlon/.sdkman/bin/sdkman-init.sh" ]] && source "/home/sscanlon/.sdkman/bin/sdkman-init.sh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/vault vault

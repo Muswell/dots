@@ -1,11 +1,11 @@
 # Increase Volume
 "amixer set Master 5%+"
-    XF86AudioRaiseVolume
+    Alt + F11
 
 #Decrease Volume
 "amixer set Master 5%-"
-    XF86AudioLowerVolume
+    Alt + F10
 
 #Mute Volume
 "amixer set Master toggle"
-    XF86AudioMute
+    Alt + F12

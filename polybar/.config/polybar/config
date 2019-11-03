@@ -83,7 +83,7 @@ bar-volume-empty-foreground = ${colors.inactive}
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = ${env:WLAN:}
 interval = 3.0
 
 format-connected = <label-connected>
@@ -181,7 +181,7 @@ label-warn-foreground = ${colors.foreground-alt}
 [module/powermenu]
 type = custom/menu
 
-expand-right = false
+expand-right = true
 
 format-spacing = 1
 
@@ -200,7 +200,7 @@ label-separator = 
 label-separator-foreground = ${colors.inactive}
 label-seperator-padding-left = 1
 label-seperator-padding-right = 0
-label-seperator-margin-right = 2
+label-seperator-margin-right = 20
 
 menu-0-0 = 
 menu-0-0-exec = i3-msg exit
