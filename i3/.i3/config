@@ -1,6 +1,6 @@
 #########################################################################
 #   i3 Window Manager Configuration
-#   
+#
 #   @author: Shane Scanlon
 #   @url: https://github.com/muswell/dotfiles/.i3/config
 #
@@ -16,11 +16,11 @@
 #   -- C: Movement and Layout
 #   -- D: Switching Modes
 #
-#   3: dMenu
+#   3: rofi
 #
 #   4: Resize Mode
 #
-#   5: Float 
+#   5: Float
 #
 #   6: Customized Layout
 #   -- A:Startup Windows
@@ -90,8 +90,8 @@ set $almostwhite #888888
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
-# start dmenu (a program launcher)
-bindsym $mod+space exec dmenu_run -nb '$base00' -nf '$base02' -sb '$base02' -sf '$base00' -i -fn "-*-Source Code Pro 10 pitch-*-*-*-*-16-*-*-*-*-*-*-*"
+# start rofi (a program launcher)
+bindsym $mod+space exec rofi -modi drun -show drun
 
 # start firefox
 bindsym $mod+c exec firefox
@@ -245,8 +245,8 @@ new_window pixel 2
 #            statusline #000000
 #            separator #000000
 #            focused_workspace #FFFFFF #FFFFFF #FD5A1E
-#            inactive_workspace #FFFFFF #000000 #FD5A1E 
-#            active_workspace #FFFFFF #000000 #FD5A1E 
+#            inactive_workspace #FFFFFF #000000 #FD5A1E
+#            active_workspace #FFFFFF #000000 #FD5A1E
 #        }
 #        tray_output LVDS1
 #}
@@ -272,7 +272,7 @@ client.background $base0E
 #########################################################################
 
 # Disable window titlebars entirely
-#for_window [class="^.*"] border pixel 1 
+#for_window [class="^.*"] border pixel 1
 for_window [class=".*"] title_format "<b>%class</b>"
 
 # Set inner/outer gaps
