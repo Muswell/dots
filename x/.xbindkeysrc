@@ -1,11 +1,11 @@
 # Increase Volume
-"amixer set Master 5%+"
-    Alt + F11
+"pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume 0 +5%"
+    XF86AudioRaiseVolume
 
 #Decrease Volume
-"amixer set Master 5%-"
-    Alt + F10
+"pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume 0 -5%"
+    XF86AudioLowerVolume
 
 #Mute Volume
-"amixer set Master toggle"
-    Alt + F12
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    XF86AudioMute
