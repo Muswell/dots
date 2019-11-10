@@ -2,7 +2,7 @@
     "editor.renderWhitespace": "all",
     "editor.accessibilitySupport": "off",
     "editor.tabCompletion": "on",
-    "go.goroot": "/usr/local/bin/go",
+    "go.goroot": "/bin/go",
     "go.gopath": "${env:HOME}/dev/go",
     "go.formatTool": "goimports",
     "go.autocompleteUnimportedPackages": true,
