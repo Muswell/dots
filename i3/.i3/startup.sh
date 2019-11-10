@@ -1,6 +1,9 @@
 #!/bin/bash
 # System startup script called when i3 starts
-#!/bin/bash
+
+# Set monitor placement and size
+#xrandr --output LVDS1 --auto --left-of HDMI1
+#xrandr --output HDMI1 --auto
 
 # Terminate already running bar instances
 killall -q polybar
@@ -11,11 +14,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Store the wlan interface in an env variable
 export WLAN=$(ip link show | grep \<BROADCAST | awk -F':' '{print $2}' | xargs)
 
-blueman-applet &
-
 # Launch Polybar, using default config location ~/.config/polybar/config
-polybar bottom &
-
-# Set monitor placement and size
-#xrandr --output LVDS1 --auto --left-of HDMI1
-#xrandr --output HDMI1 --auto
+for m in $(polybar --list-monitors | cut -d":" -f1); do
+  MONITOR=$m polybar --reload bottom &
+done
