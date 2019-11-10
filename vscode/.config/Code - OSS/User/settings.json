@@ -1,0 +1,11 @@
+{
+    "editor.renderWhitespace": "all",
+    "editor.accessibilitySupport": "off",
+    "editor.tabCompletion": "on",
+    "go.goroot": "/usr/local/bin/go",
+    "go.gopath": "/home/sscanlon/dev/go",
+    "go.formatTool": "goimports",
+    "go.autocompleteUnimportedPackages": true,
+    "todo-tree.regex.regexCaseSensitive": false,
+    "markdown-pdf.executablePath": "/usr/bin/google-chrome-stable"
+}
