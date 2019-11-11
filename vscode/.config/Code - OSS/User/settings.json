@@ -2,6 +2,7 @@
     "editor.renderWhitespace": "all",
     "editor.accessibilitySupport": "off",
     "editor.tabCompletion": "on",
+    "editor.minimap.enabled": false,
     "go.goroot": "/bin/go",
     "go.gopath": "${env:HOME}/dev/go",
     "go.formatTool": "goimports",
