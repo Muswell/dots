@@ -52,8 +52,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'fatih/vim-go' " Amazing combination of features.
     Plug 'godoctor/godoctor.vim' " Some refactoring tools
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'zchee/deoplete-go', {'build': {'unix': 'make'}}
     Plug 'jodosha/vim-godebug' " Debugger integration via delve
 call plug#end()
 
@@ -402,9 +400,3 @@ set laststatus=2
 "        \ '/var/www/html/': '/home/sscanlon/dev/rws/aurora/'
 "     \ }
 "     \}
-
-""""""""""""""""""""""""""""""""
-" Deoplete
-""""""""""""""""""""""""""""""""
-let g:deoplete#enable_at_startup = 1
-let g:go_fmt_command = "goimports"
