@@ -1,6 +1,6 @@
-alias ls='ls -F --color=auto' 
+alias ls='ls -F --color=auto'
 alias ll='ls -alrth --color=auto'
-alias grep='grep --color=auto' 
+alias grep='grep --color=auto'
 alias vi='nvim'
 alias vim='nvim'
 alias sudo='command sudo '
@@ -9,3 +9,18 @@ alias libreoffice="libreoffice --norestore &"
 
 # store aliases elsewhere
 [ -f ~/.zsh_git_aliases ] && source ~/.zsh_git_aliases
+
+# cd into a directory and open vscode
+cdc(){
+    if [ "$#" -ne 1 ]; then
+        return 1
+    fi
+
+    if [ ! -d $1 ]; then
+        echo "${1} is not a directory" >&2
+        return 1
+    fi
+
+    cd $1
+    code .
+}
