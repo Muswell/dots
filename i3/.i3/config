@@ -32,7 +32,7 @@
 #   1. Startup Script
 #########################################################################
 
-exec --no-startup-id compton &
+exec --no-startup-id picom &
 exec --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.jpg
 # Enable network manager on startup
 exec --no-startup-id nm-applet
@@ -41,7 +41,7 @@ exec --no-startup-id nm-applet
 #exec --no-startup-id gnome-settings-daemon
 
 # enable keyring
-exec --no-startup-id ssh-add
+#exec --no-startup-id ssh-add
 exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal;'
 exec ~/.i3/startup.sh
 
@@ -91,7 +91,7 @@ set $almostwhite #888888
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start rofi (a program launcher)
-bindsym $mod+space exec rofi -modi drun -show drun
+bindsym $mod+space exec rofi -combi-modi window,drun -show combi -modi combi
 
 # start firefox
 bindsym $mod+c exec firefox
