@@ -91,7 +91,7 @@ set $almostwhite #888888
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start rofi (a program launcher)
-bindsym $mod+space exec rofi -combi-modi window,drun -show combi -modi combi
+bindsym $mod+space exec rofi -combi-modi window#drun#ssh -show combi -modi combi
 
 # start firefox
 bindsym $mod+c exec firefox
@@ -255,7 +255,7 @@ new_window pixel 2
 #########################################################################
 #   6. Customized Layout -- C: Styles
 #########################################################################
-font pango: DejaVu Sans Mono 10
+font pango: SourceCodePro-Regular 10
 
 
 # Basic color configuration using the Base16 variables for windows and borders.
