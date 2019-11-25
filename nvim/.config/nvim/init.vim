@@ -10,7 +10,7 @@ noremap <C-K>     <C-W>k
 noremap <C-H>     <C-W>h
 noremap <C-L>     <C-W>l
 
-map <leader><space> :terminal<cr>
+map <leader><space> :split \| :terminal<cr>
 tnoremap <Esc> <C-\><C-n>
 map <leader>v :vsplit<cr>
 map <leader>b :split<cr>
@@ -335,6 +335,8 @@ set autowrite		" Automatically save before commands like :next and :make
 set hidden             " Hide buffers when they are abandoned
 set mouse=a		" Enable mouse usage (all modes)
 set relativenumber
+set splitbelow
+set splitright
 autocmd FocusLost * :set number
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
