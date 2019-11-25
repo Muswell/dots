@@ -1,3 +1,5 @@
 rofi.color-window: #FFE8C9, #D13270, #D13270
 rofi.color-normal: #FFE8C9, #D13270, #FFD8C9, #D13270, #FFE8C9
 rofi.terminal:             termite
+rofi.ssh-client: ssh
+rofi.ssh-command: {terminal} -e "{ssh-client} {host}"

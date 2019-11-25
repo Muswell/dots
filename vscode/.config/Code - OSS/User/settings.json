@@ -9,5 +9,6 @@
     "go.autocompleteUnimportedPackages": true,
     "todo-tree.regex.regexCaseSensitive": false,
     "markdown-pdf.executablePath": "/bin/firefox",
-    "todo-tree.highlights.enabled": true
+    "todo-tree.highlights.enabled": true,
+    "explorer.confirmDelete": false
 }

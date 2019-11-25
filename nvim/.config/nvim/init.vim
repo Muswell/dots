@@ -10,6 +10,10 @@ noremap <C-K>     <C-W>k
 noremap <C-H>     <C-W>h
 noremap <C-L>     <C-W>l
 
+map <leader><space> :terminal<cr>
+tnoremap <Esc> <C-\><C-n>
+map <leader>v :vsplit<cr>
+map <leader>b :split<cr>
 map <leader>tn :tabnew<cr>
 map <leader>tc :tabclose<cr>
 
