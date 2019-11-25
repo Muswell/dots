@@ -3,3 +3,10 @@ rofi.color-normal: #FFE8C9, #D13270, #FFD8C9, #D13270, #FFE8C9
 rofi.terminal:             termite
 rofi.ssh-client: ssh
 rofi.ssh-command: {terminal} -e "{ssh-client} {host}"
+rofi.kb-row-up:                      Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab
+rofi.kb-row-down:                    Down,Control+j
+rofi.kb-accept-entry:                Control+m,Return,KP_Enter
+rofi.kb-remove-to-eol:               Control+q
+rofi.kb-mode-next:                   Shift+Right,Control+Tab,Control+l
+rofi.kb-mode-previous:               Shift+Left,Control+Shift+Tab,Control+h
+rofi.kb-remove-char-back:            BackSpace
