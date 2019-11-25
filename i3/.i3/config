@@ -92,7 +92,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # start rofi (a program launcher)
 bindsym $mod+space exec rofi -combi-modi window#drun#ssh -show combi -modi combi
-
+# run teiler with the print screen button
+bindsym Print exec teiler
 # start firefox
 bindsym $mod+c exec firefox
 
