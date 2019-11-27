@@ -96,7 +96,8 @@ bindsym $mod+space exec rofi -combi-modi window#drun#ssh -show combi -modi combi
 bindsym Print exec teiler
 # start firefox
 bindsym $mod+c exec firefox
-
+# open rofi-pass
+bindsym $mod+Shift+P exec rofi-pass
 # start emacs
 bindsym $mod+m exec emacs
 #########################################################################
