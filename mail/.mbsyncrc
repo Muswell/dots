@@ -1,0 +1,68 @@
+#################################
+######## Account rws ########
+#################################
+IMAPAccount rws
+Host outlook.office365.com
+User shane.scanlon@corptransinc.com
+PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.secrets/rws-email.gpg"
+SSLType IMAPS
+SSLVersions TLSv1.2
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+# Remote storage
+IMAPStore rws-remote
+Account rws
+
+# Local storage
+MaildirStore rws-local
+Subfolders Verbatim
+Path ~/Mail/rws/
+Inbox ~/Mail/rws/Inbox
+
+Channel rws-inbox
+Master :rws-remote:Inbox
+Slave :rws-local:Inbox
+Create Both
+Expunge Both
+
+Channel rws-archive
+Master :rws-remote:Archive
+Slave :rws-local:Archive
+Create Both
+Expunge Both
+
+Channel rws-drafts
+Master :rws-remote:Drafts
+Slave :rws-local:Drafts
+Create Both
+Expunge Both
+
+Channel rws-sent
+Master :rws-remote:"Sent Items"
+Slave :rws-local:"Sent Items"
+Create Both
+Expunge Both
+
+Channel rws-trash
+Master :rws-remote:"Deleted Items"
+Slave :rws-local:"Deleted Items"
+Create Both
+Expunge Both
+
+Channel rws-junk
+Master :rws-remote:"Junk Email"
+Slave :rws-local:"Junk Email"
+Create Both
+Expunge Both
+
+Group rws
+Channel rws-inbox
+Channel rws-archive
+Channel rws-drafts
+Channel rws-sent
+Channel rws-trash
+Channel rws-junk
+
+#################################
+######## Account gmail ##########
+#################################
