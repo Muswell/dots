@@ -16,8 +16,8 @@ Account rws
 # Local storage
 MaildirStore rws-local
 Subfolders Verbatim
-Path ~/Mail/rws/
-Inbox ~/Mail/rws/Inbox
+Path ~/library/mail/rws/
+Inbox ~/library/mail/rws/Inbox
 
 Channel rws-inbox
 Master :rws-remote:Inbox

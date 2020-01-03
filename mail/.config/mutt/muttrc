@@ -1,5 +1,5 @@
 # paths
-set folder = ~/Mail
+set folder = ~/library/mail
 set header_cache = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
 set certificate_file = /etc/ssl/certs/ca-certificates.crt
@@ -87,6 +87,10 @@ set sidebar_format = "%B %* [%?N?%N / ?%S]"
 # Mailboxes to show in the sidebar.
 mailboxes =rws/Inbox
 mailboxes =rws/Archive =rws/Sent\ Items =rws/Drafts =rws/Junk\ Email =rws/Deleted\ Items
+mailboxes =rws/Sent\ Items
+mailboxes =rws/Drafts
+mailboxes =rws/Junk\ Email
+mailboxes =rws/Deleted\ Items
 
 # GPG/PGP
 set pgp_sign_as = "C726 896B 441F 1D26 AEA7  7200 52BA E83B F56B 8814"
