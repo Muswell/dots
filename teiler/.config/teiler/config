@@ -8,9 +8,9 @@ _rofi () {
 # general variables
 
 # the path where images, videos and pastes should be saved
-img_path=$HOME/Pictures/Screenshots
-vid_path=$HOME/Videos/Screencasts
-paste_path=$HOME/Pictures/Paste
+img_path=$HOME/library/media/images/screenshots
+vid_path=$HOME/library/media/video/screencasts
+paste_path=$HOME/library/media/images/paste
 
 # set viewer for images and videos plus editor for images
 #viewer=eog
