@@ -1,1 +1,53 @@
-xbindkeys
+# Read the Xresources file if it exists.
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
+# Bind keys with xbindkeys
+xbindkeys &
+
+# Map keys with xmodmap
+xmodmap ~/.Xmodmap
+
+# Bind keys with sxhkd.
+#sxhkd &
+
+# start picom
+picom &
+
+# Control volume with pasystray.
+pasystray &
+
+# NetworkManager for managing networks.
+nm-applet &
+
+# Hide the cursor when idle.
+unclutter &
+
+# Notifications with dunst
+#dunst &
+
+# Start geoclue
+/usr/lib/geoclue-2.0/demos/agent &
+
+# Adjust color temperature with Redshift.
+redshift-gtk &
+
+# Load the best monitor profile available
+autorandr --change --default dual
+
+# Monitor monitors for changes
+srandrd autorandr --change --default dual
+
+# Set background image - do after autorandr
+feh --bg-fill /usr/share/pixmaps/dm-background.jpg &
+
+# Udiskie for mounting.
+#udiskie &
+
+# Blueman for bluetooth
+blueman-applet &
+
+# Use rumno for media notifications
+rumno-background
+
+# Prevent monitor sleep with caffeine
+caffeine &
