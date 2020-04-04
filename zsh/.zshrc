@@ -77,10 +77,10 @@ bindkey -e
 bindkey -e '\e[3~' delete-char
 
 
-# this prompt has too much shit.
-#[ -f ~/.zsh_prompt ] && source ~/.zsh_prompt
 # store environment vars elsewhere
 [ -f ~/.zsh_env_vars ] && source ~/.zsh_env_vars
+# store local var overrides vars elsewhere
+[ -f ~/.zsh_local_vars ] && source ~/.zsh_local_vars
 # store aliases elsewhere
 [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
 #store path
