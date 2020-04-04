@@ -6,3 +6,5 @@ mpd/.config/mpd/state
 mpd/.config/mpd/sticker.sql
 mpd/.config/mpd/pid
 zsh/.zsh_local_vars
+!vscode/.config/Code - OSS/User/
+vscode/.config/Code - OSS/
