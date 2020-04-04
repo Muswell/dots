@@ -205,21 +205,6 @@ nnoremap <Leader>E :PHPExpandFQCN<cr>
 " View the php manual for word under cursor
 let g:php_manual_online_search_shortcut = '<leader>k'
 
-""""""""""""""""""""""""""""""""""""""
-" Projects
-""""""""""""""""""""""""""""""""""""""
-let g:project_use_nerdtree = 1
-let g:project_enable_welcome = 1
-set rtp+=~/.vim/bundle/vim-project/
-call project#rc("~/dev")
-
-Project 'tests/symfony-test', 'symfony-test'
-Project 'tests/php-docker', 'php-docker'
-
-" I prefer to have my project's configuration in a separate file
-" so ~/.vimprojects
-" nmap <leader><F2> :e ~/.vimprojects<cr>
-
 """"""""""""""""""""""""""""""""""""""""
 " FZF
 """"""""""""""""""""""""""""""""""""""""
