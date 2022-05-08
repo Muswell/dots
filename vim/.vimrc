@@ -127,8 +127,8 @@ noremap <C-L>     <C-W>l
 
 " bclose - keeps windows when closing buffers
 Plugin 'bcaccinolo/bclose'
-"close buffer 
-map <leader>d :Bclose!<cr> 
+"close buffer
+map <leader>d :Bclose!<cr>
 "map <leader>d :MBEbd!<cr> "MBE close sometimes threw errors and we no likie.
 
 map <leader>tn :tabnew<cr>
@@ -206,6 +206,8 @@ set cmdheight=2
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
+" Turn on spell check
+set spell spelllang=en_us
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8

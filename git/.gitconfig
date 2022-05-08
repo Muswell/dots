@@ -1,6 +1,6 @@
 [user]
     name = Shane Scanlon
-    email = slickrickjamesbrown@gmail.com
+    email = shane@turtle-stack.com
 [core]
     autocrlf = input
     excludesfile = ~/.gitignore_global
@@ -8,3 +8,5 @@
 	enabled = true
 [push]
 	default = simple
+[init]
+	defaultBranch = master

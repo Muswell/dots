@@ -51,3 +51,6 @@ rumno-background
 
 # Prevent monitor sleep with caffeine
 caffeine &
+
+# Start Nextcloud sync
+nextcloud &

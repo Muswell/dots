@@ -1,0 +1,15 @@
+configuration {
+	terminal: "termite";
+	ssh-client: "ssh";
+	ssh-command: "{terminal} -e "{ssh-client} {host}"";
+	color-normal: "#FFE8C9, #D13270, #FFD8C9, #D13270, #FFE8C9";
+	color-window: "#FFE8C9, #D13270, #D13270";
+	kb-remove-char-back: "BackSpace";
+	kb-remove-to-eol: "Control+q";
+	kb-accept-entry: "Control+m,Return,KP_Enter";
+	kb-mode-next: "Shift+Right,Control+Tab,Control+l";
+	kb-mode-previous: "Shift+Left,Control+Shift+Tab,Control+h";
+	kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
+	kb-row-down: "Down,Control+j";
+    kb-mode-complete: "Control+z";
+}

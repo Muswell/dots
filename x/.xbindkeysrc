@@ -1,23 +1,39 @@
 # Increase Volume
-"pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume 0 +5%"
+"pactl set-sink-mute bluez_sink.6A_E6_4A_01_1E_00.a2dp_sink false ; pactl set-sink-volume bluez_sink.6A_E6_4A_01_1E_00.a2dp_sink +5% && rumno -v $( amixer get Master |grep 'Right:' | awk -F'[]%[]' '{ print $2 }' )"
     XF86AudioRaiseVolume
 
+"pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ +5% && rumno -v $( amixer get Master |grep 'Right:' | awk -F'[]%[]' '{ print $2 }' )"
+    Mod4 + XF86AudioRaiseVolume
 #Decrease Volume
-"pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume 0 -5%"
+"pactl set-sink-mute bluez_sink.6A_E6_4A_01_1E_00.a2dp_sink false ; pactl set-sink-volume bluez_sink.6A_E6_4A_01_1E_00.a2dp_sink -5% && rumno -v $( amixer get Master |grep 'Right:' | awk -F'[]%[]' '{ print $2 }' )"
     XF86AudioLowerVolume
 
+"pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ -5% && rumno -v $( amixer get Master |grep 'Right:' | awk -F'[]%[]' '{ print $2 }' )"
+    Mod4 + XF86AudioLowerVolume
+
 #Mute Volume
-"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+"pactl set-sink-mute bluez_sink.6A_E6_4A_01_1E_00.a2dp_sink toggle; if amixer get Master | grep -Fq "[off]"; then rumno -m; else rumno -v $( amixer get Master |grep 'Right:' | awk -F'[]%[]' '{ print $2 }' ); fi"
     XF86AudioMute
 
+"pactl set-sink-mute @DEFAULT_SINK@ toggle; if amixer get Master | grep -Fq "[off]"; then rumno -m; else rumno -v $( amixer get Master |grep 'Right:' | awk -F'[]%[]' '{ print $2 }' ); fi"
+    Mod4 + XF86AudioMute
+
 # Play/Pause
-"mpc toggle"
-    XF86AudioPlay
+#"mpc toggle"
+#    XF86AudioPlay
 
 # Previous Song
-"mpc prev"
-    XF86AudioPrev
+#"mpc prev"
+#    XF86AudioPrev
 
 # Next Song
-"mpc next"
-    XF86AudioNext
+#"mpc next"
+#    XF86AudioNext
+
+# Increase Brightness
+"xbacklight +10 && rumno -b $( xbacklight ) --bar-num-segments 10 --bar-filled-color F1E57A --bar-empty-color F1E57A40"
+    XF86MonBrightnessUp
+
+# Decreas Brightness
+"xbacklight -10 && rumno -b $( xbacklight ) --bar-num-segments 10 --bar-filled-color F1E57A --bar-empty-color F1E57A40"
+    XF86MonBrightnessDown

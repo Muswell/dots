@@ -7,12 +7,15 @@ alias sudo='command sudo '
 alias rr='ranger'
 alias libreoffice="libreoffice --norestore &"
 alias galias="alias | grep -i"
+alias gdam='git branch --merged | egrep -v "(^\*|master|dev|staging|demo)" | xargs git branch -d'
+alias ant='/home/muswell/bin/apache-ant-1.10.11/bin/ant'
+alias enews='wget --user hlhspksvtg --ask-password'
 
 # store aliases elsewhere
 [ -f ~/.zsh_git_aliases ] && source ~/.zsh_git_aliases
 
 # cd into a directory and open vscode
-cdc(){
+cdc() {
     if [ "$#" -ne 1 ]; then
         return 1
     fi
@@ -24,4 +27,58 @@ cdc(){
 
     cd $1
     code .
+}
+
+dns() {
+    file="${HOME}/config/dns/${1}.resolv.conf"
+    if [ ! -f $file ]; then
+        >&2 echo "$1 is not configured"
+        return 1
+    fi
+    sudo rm -f /etc/resolv.conf
+    sudo ln -s $file /etc/resolv.conf
+    echo -e "DNS configured for $1"
+    ls -l /etc/resolv.conf
+}
+
+ns() {
+    file="${HOME}/config/NetSuite/${1}.properties"
+    if [ ! -f $file ]; then
+        >&2 echo "$1 is not configured"
+        return 1
+    fi
+    sudo rm -f /usr/local/etc/NetSuite/NetSuite.properties
+    sudo ln -s $file /usr/local/etc/NetSuite/NetSuite.properties
+    echo -e "NS configured for $1"
+    ls -l /usr/local/etc/NetSuite/NetSuite.properties
+}
+
+# RWS Specific
+# TODO move to ignored file
+vpn() {
+    case "$1" in
+        'bos')
+            url="vpn-bos.rws.com"
+            ;;
+        'col')
+            url="vpn-col.rws.com"
+            ;;
+        'qls')
+            url="vpn-qls.rws.com"
+            ;;
+        *)
+            url="vpn-sfo.rws.com"
+            ;;
+    esac
+
+    netExtender -u shane.scanlon -d corptransinc $url
+}
+
+av() {
+    sed -n -r 's/@define\("VERSION","(v[0-9]+\.[0-9]+\.[0-9]+)"\);/\1/p' $AURORA_HOME/_aurora_static_config.php
+}
+
+bump() {
+    sed -i -r 's/@define\("VERSION","v([0-9]+\.)([0-9]+)\.([0-9]+)"\);/v="\3"; echo "@define(\\"VERSION\\",\\"v\1\2."$(($v + 1))"\\");"/ge' $AURORA_HOME/_aurora_static_config.php
+    av
 }

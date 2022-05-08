@@ -32,10 +32,11 @@
 #   1. Startup Script
 #########################################################################
 
-exec --no-startup-id picom &
-exec --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.jpg
+#exec --no-startup-id picom &
+#exec --no-startup-id feh --bg-fill /usr/share/pixmaps/dm-background.jpg
 # Enable network manager on startup
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
+#exec --no-startup-id blueman-applet
 
 # Enable various gnome setting applets in window bar.
 #exec --no-startup-id gnome-settings-daemon
@@ -43,6 +44,7 @@ exec --no-startup-id nm-applet
 # enable keyring
 #exec --no-startup-id ssh-add
 exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal;'
+#exec --no-startup-id i3-msg 'workspace 1; exec kitty;'
 exec ~/.i3/startup.sh
 
 
@@ -89,13 +91,15 @@ set $almostwhite #888888
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec kitty
 
 # start rofi (a program launcher)
-bindsym $mod+space exec rofi -combi-modi window#drun#ssh -show combi -modi combi
+bindsym $mod+space exec rofi -combi-modi window#drun#run#ssh -show combi -modi combi
 # run teiler with the print screen button
 bindsym Print exec teiler
-# start firefox
-bindsym $mod+c exec firefox
+# start web browser
+bindsym $mod+c exec /bin/firefox
+bindsym $mod+Shift+C exec /bin/firefox -p work
 # open rofi-pass
 bindsym $mod+Shift+P exec rofi-pass
 # start emacs
@@ -227,8 +231,8 @@ bindsym $mod+Up floating toggle
 #   6. Customized Layout -- A: Startup Windows
 #########################################################################
 
-workspace 1 output LVDS1
-workspace 2 output HDMI1
+workspace 1 output HDMI-A-0
+workspace 2 output DisplayPort-2
 
 
 workspace_layout tabbed

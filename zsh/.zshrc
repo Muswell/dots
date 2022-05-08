@@ -94,6 +94,9 @@ bindkey -e '\e[3~' delete-char
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 
+# Deno
+#[ -f ~/.zsh/_deno ] && source ~/.zsh/_deno
+
 # This makes cd=pushd
 setopt AUTO_PUSHD
 
@@ -121,11 +124,9 @@ bindkey -M emacs '^N' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/vault vault
+
+eval "$(starship init zsh)"

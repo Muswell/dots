@@ -11,15 +11,20 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-# Sometimes the interface values don't populate immediately, so loop /shrug
-while [ -z "$WLAN" ]
-do
-  # Store the wlan interface in an env variable
-  export WLAN=$(ip link show | grep \<BROADCAST | awk -F':' '{print $2}' | xargs)
-  #export DEFAULT_INTERFACE=$(ip route | grep '^default' | awk '{print $5}' | head -n1)
-done
+# adjust screens
+#autorandr --change
+#feh --bg-fill /usr/share/pixmaps/dm-background.jpg
+
+# getting this from ip link takes too long, todo find a faster way of dynamically setting
+#export WLAN=wlp7s0
+export ETH=enp9s0
+
 
 # Launch Polybar, using default config location ~/.config/polybar/config
-for m in $(polybar --list-monitors | cut -d":" -f1); do
-  MONITOR=$m polybar --reload bottom &
-done
+#for m in $(polybar --list-monitors | cut -d":" -f1); do
+#  MONITOR=$m polybar --reload bottom > $HOME/log/polybar/polybar.log &
+#done
+
+MONITOR='HDMI-A-0' polybar --reload bottom > $HOME/log/polybar/hdmi.log &
+export MONITOR_RIGHT='DisplayPort-2'
+polybar --reload bottom_right > $HOME/log/polybar/dp.log &

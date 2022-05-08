@@ -3,12 +3,15 @@
     "editor.accessibilitySupport": "off",
     "editor.tabCompletion": "on",
     "editor.minimap.enabled": false,
-    "go.goroot": "/bin/go",
+    "go.goroot": "/usr/lib/go",
     "go.gopath": "${env:HOME}/dev/go",
     "go.formatTool": "goimports",
     "go.autocompleteUnimportedPackages": true,
     "todo-tree.regex.regexCaseSensitive": false,
-    "markdown-pdf.executablePath": "/bin/firefox",
+    "markdown-pdf.executablePath": "/usr/local/bin/chromium",
     "todo-tree.highlights.enabled": true,
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
+    "todo-tree.tree.showScanModeButton": false,
+    "go.useLanguageServer": true,
+    "latex-workshop.view.pdf.viewer": "tab"
 }
